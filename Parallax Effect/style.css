@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;500;700&family=Nunito:wght@300;400;500;600&family=Oswald:wght@200;400&family=Sanchez&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&family=Oswald:wght@200;400&family=Sanchez&display=swap");
 
 /* --- GENERAL RULES --- */
 :root {
   --navColor: #bebef4;
   --contentColor: #dadada;
+  --mainColor: #1f1fb6;
+  --accentColor: #b48a21;
 }
 
 *,
@@ -35,7 +37,7 @@ h4 {
 button {
   width: 75px;
   height: 25px;
-  background-color: #1f1fb6;
+  background-color: var(--mainColor);
   border-radius: 4px;
   box-shadow: 3px 3px 5px #00000080;
   transition: 0.2s;
@@ -50,11 +52,11 @@ button:hover {
 }
 
 button:active {
-  background-color: #b48a21;
+  background-color: var(--accentColor);
 }
 
 p::first-letter {
-  color: #1f1fb6;
+  color: var(--mainColor);
   font-size: 1.5rem;
 }
 
@@ -86,6 +88,7 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
+  color: #060623;
 }
 
 nav {
@@ -104,34 +107,22 @@ nav ul {
 
 ul li a {
   text-decoration: none;
-  color: #1f1fb6;
+  color: var(--mainColor);
   cursor: pointer;
   transition: color 0.2s ease;
+  text-shadow: 0 6px 12px hsl(240, 71%, 12%, 0.5);
 }
 ul li a:hover {
   animation: navfx 1s;
-  color: #b48a21;
-  border-bottom: 2px solid #b48a21;
+  color: var(--accentColor);
+  border-bottom: 2px solid var(--accentColor);
+  text-shadow: 0 6px 10px var(--mainColor) 40;
 }
 
 .header-buttons {
   display: flex;
   gap: 2rem;
   align-items: center;
-}
-
-@keyframes navfx {
-  0% {
-    color: #1f1fb6;
-  }
-
-  35% {
-    color: white;
-  }
-
-  100% {
-    color: #b48a21;
-  }
 }
 
 /* ---------- HERO Parallax ----------- */
@@ -188,13 +179,18 @@ ul li a:hover {
   color: white;
   font-size: 3.5rem;
   text-transform: uppercase;
+  animation: focus-in 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s both;
 }
 
 #hero button {
   width: 160px;
   height: 40px;
-  font-size: 1.2rem;
-  border-radius: 8px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --------- CONTENT -----------*/
@@ -219,6 +215,8 @@ ul li a:hover {
 .content-left h2 {
   margin-bottom: 20px;
   position: relative;
+  text-shadow: 0 6px 6px hsl(240, 71%, 12%, 0.5);
+  transition: 0.5s;
 }
 
 .content-left h2::after {
@@ -228,8 +226,15 @@ ul li a:hover {
   left: 0;
   width: 338px;
   height: 2px;
-  background-color: #1f1fb6;
+  background-color: var(--mainColor);
   position: absolute;
+}
+
+.content-left p {
+  width: 75ch;
+  line-height: 26px;
+  text-shadow: 0 6px 6px hsl(240, 71%, 12%, 0.32);
+  color: #060623;
 }
 
 .content-left h2.one::after {
@@ -239,11 +244,18 @@ ul li a:hover {
 .content-right-box {
   text-align: center;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content-right-box h2 {
   font-size: 2rem;
-  border-bottom: 2px solid #b48a21;
+  transition: 0.8s ease-out;
+  position: relative;
+  width: fit-content;
+  border-bottom: 2px solid var(--accentColor);
+  text-shadow: 0 6px 6px hsl(43, 69%, 12%, 0.5);
 }
 
 .content-right-box img {
@@ -252,6 +264,7 @@ ul li a:hover {
   position: relative;
   border-radius: 1rem;
   margin: 20px 0 10px;
+  transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ----- TEXT WITH 2ND PARALLAX ----- */
@@ -262,6 +275,7 @@ ul li a:hover {
   overflow-y: scroll;
   perspective: 10px;
   background-color: hsl(240, 71%, 6%);
+  scroll-behavior: smooth;
 }
 
 #mission {
@@ -281,7 +295,7 @@ ul li a:hover {
   width: 100%;
   height: 100%;
   z-index: -1;
-  transform: translateZ(-15px) scale(3.3);
+  transform: translateZ(-18px) scale(3.4);
 }
 
 #mission .foreground {
@@ -291,17 +305,22 @@ ul li a:hover {
 }
 
 #mission .mission-container {
-  background-color: #b48a21bb;
+  background-color: #b58b21bb;
   height: 100%;
 }
 
 #mission h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 20px;
+  font-family: "Sanchez";
+  text-shadow: 0 6px 6px hsl(43, 69%, 12%);
+  letter-spacing: 2.2px;
+  transition: 0.5s ease-out;
 }
 
 #mission p {
   padding: 10px 30px;
+  text-shadow: 0 6px 6px hsl(43, 69%, 12%);
 }
 
 #mission p strong {
@@ -330,6 +349,10 @@ ul li a:hover {
   box-shadow: 3px 3px 5px #00000080;
 }
 
+#mission form input:focus {
+  outline: 2px solid var(--mainColor);
+}
+
 #mission form button {
   position: absolute;
   width: 50px;
@@ -348,11 +371,12 @@ ul li a:hover {
 }
 
 #mission form button.btn2 {
-  top: 69%;
+  top: 68.5%;
 }
 
 #mission form h5 {
   position: relative;
+  text-shadow: 0 6px 6px hsl(43, 69%, 12%);
 }
 
 #mission form h5::after {
@@ -362,11 +386,11 @@ ul li a:hover {
   position: absolute;
   left: 27%;
   bottom: 0;
-  background-color: #1f1fb680;
+  background-color: var(--mainColor) 80;
 }
 
 #mission form h6 {
-  font-size: 0.5em;
+  font-size: 0.55em;
   color: #444;
 }
 
@@ -387,7 +411,7 @@ ul li a:hover {
 #partners h2 {
   color: var(--contentColor);
   font-size: 30px;
-  border-bottom: 1px solid #b48a21;
+  border-bottom: 1px solid var(--accentColor);
 }
 
 .partners-box {
@@ -415,18 +439,20 @@ img.google {
 /* ------ FOOTER ----- */
 
 footer {
-  height: 200px;
+  height: 150px;
   width: 100%;
   background-color: #222;
-  position: relative;
-  bottom: 0;
+}
+
+footer.hidden {
+  display: none;
 }
 
 .footer-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 25px;
 }
 
 footer #logo {
@@ -462,4 +488,138 @@ footer #logo {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ++++++++++ EFFECTS +++++++++++ */
+
+.from-left {
+  transform: translateX(-100%);
+}
+
+.from-right {
+  transform: translateX(100%);
+}
+
+.from-top {
+  transform: translateY(-200%);
+}
+
+.from-bottom {
+  transform: translateY(200%);
+}
+
+.spin-in {
+  opacity: 0;
+  transform: scale(0.5) rotate(720deg);
+}
+
+.puff-in {
+  transform: scale(2);
+  opacity: 0;
+  filter: blur(4px);
+}
+
+.tilt-in {
+  transform: rotateY(-35deg) rotateX(20deg) translate(250px, -250px)
+    skew(-12deg, -15deg) scale(0.5);
+  opacity: 0;
+}
+
+@keyframes navfx {
+  0% {
+    color: var(--mainColor);
+  }
+  35% {
+    color: white;
+  }
+  100% {
+    color: var(--accentColor);
+  }
+}
+
+@keyframes focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+    text-shadow: 3px 6px 6px var(--mainColor) ac;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 3px 6px 6px var(--mainColor) ac;
+  }
+  50% {
+    text-shadow: 6px 12px 24px var(--mainColor);
+  }
+  100% {
+    text-shadow: 3px 6px 6px var(--mainColor) ac;
+  }
+}
+
+.button-85 {
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: hsl(240, 71%, 22%);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
