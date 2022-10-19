@@ -2,10 +2,14 @@
 
 /* --- GENERAL RULES --- */
 :root {
-  --navColor: #bebef4;
-  --contentColor: #dadada;
-  --mainColor: #1f1fb6;
+  --mainColor: #1f1fb7;
   --accentColor: #b48a21;
+  --navColor: #bebeff;
+  --contentColor: #dadada;
+  --textColor: #060623;
+  --navColorDark: #08082b;
+  --contentColorDark: #0a0a0a;
+  --textColorDark: #dadada;
 }
 
 *,
@@ -16,6 +20,19 @@
   border: 0;
   font-family: "Nunito", "sans-serif";
   scroll-behavior: smooth;
+}
+
+h2,
+h5,
+p {
+  color: var(--textColor);
+  transition: 0.3s;
+}
+
+#mission h2,
+#mission h5,
+#mission p {
+  color: #000000;
 }
 
 h4 {
@@ -43,11 +60,11 @@ button {
   transition: 0.2s;
   cursor: pointer;
   padding: 0;
+  color: var(--contentColor);
 }
 
 button:hover {
   transform: scale(1.02);
-  color: var(--contentColor);
   opacity: 0.75;
 }
 
@@ -88,7 +105,7 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #060623;
+  color: var(--textColor);
 }
 
 nav {
@@ -234,7 +251,7 @@ ul li a:hover {
   width: 75ch;
   line-height: 26px;
   text-shadow: 0 6px 6px hsl(240, 71%, 12%, 0.32);
-  color: #060623;
+  color: var(--textColor);
 }
 
 .content-left h2.one::after {
@@ -553,13 +570,16 @@ footer #logo {
 
 @keyframes glow {
   0% {
-    text-shadow: 3px 6px 6px var(--mainColor) ac;
+    text-shadow: 3px 6px 6px var(--mainColor);
+    opacity: 0.75;
   }
   50% {
     text-shadow: 6px 12px 24px var(--mainColor);
+    opacity: 1;
   }
   100% {
-    text-shadow: 3px 6px 6px var(--mainColor) ac;
+    text-shadow: 3px 6px 6px var(--mainColor);
+    opacity: 0.75;
   }
 }
 
