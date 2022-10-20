@@ -108,9 +108,23 @@ header {
   color: var(--textColor);
 }
 
+#logo img {
+  width: 48px;
+}
+
+#logo h5 {
+  font-size: 1.8rem;
+}
+
+nav.mobile {
+  display: none;
+}
+
 nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 40%;
 }
 
 nav ul {
@@ -118,9 +132,10 @@ nav ul {
   list-style: none;
   font-size: 24px;
   display: flex;
-  gap: 32px;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
 }
-/* Add scroll FX and text FX, make footer stay at the bottom, dark mode  */
 
 ul li a {
   text-decoration: none;
@@ -150,6 +165,11 @@ ul li a:hover {
   overflow-y: scroll;
   perspective: 10px;
   margin-top: 65px;
+}
+
+.wrapper.open {
+  filter: blur(3px);
+  transition: 0.4s ease-in-out;
 }
 
 #hero {
@@ -215,13 +235,12 @@ ul li a:hover {
 #content {
   background-color: var(--contentColor);
   display: grid;
-  gap: 80px;
   grid-template-columns: 2fr 1fr;
   z-index: 2;
 }
 
 .content-left {
-  width: 75ch;
+  width: 100%;
   line-height: 26px;
 }
 
@@ -234,28 +253,16 @@ ul li a:hover {
   position: relative;
   text-shadow: 0 6px 6px hsl(240, 71%, 12%, 0.5);
   transition: 0.5s;
-}
-
-.content-left h2::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 338px;
-  height: 2px;
-  background-color: var(--mainColor);
-  position: absolute;
+  border-bottom: 2px solid var(--mainColor);
+  width: fit-content;
+  text-align: start;
 }
 
 .content-left p {
-  width: 75ch;
+  width: 90%;
   line-height: 26px;
   text-shadow: 0 6px 6px hsl(240, 71%, 12%, 0.32);
   color: var(--textColor);
-}
-
-.content-left h2.one::after {
-  width: 292px;
 }
 
 .content-right-box {
@@ -478,7 +485,7 @@ footer #logo {
 
 .social-media {
   display: flex;
-  gap: 2rem;
+  gap: 30px;
 }
 
 .social-media img {
@@ -510,7 +517,7 @@ footer #logo {
 /* ++++++++++ EFFECTS +++++++++++ */
 
 .from-left {
-  transform: translateX(-100%);
+  transform: translateX(-200%);
 }
 
 .from-right {
@@ -642,4 +649,265 @@ footer #logo {
   100% {
     background-position: 0 0;
   }
+}
+
+/* ++++ MEDIA ++++ */
+@media (max-width: 925px) /* ++++++++++++++++++++++++++++++++++ 925px */ {
+  #content.padding-large {
+    padding: 40px;
+  }
+
+  #mission .mission-container.padding-large {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 770px) /* ++++++++++++++++++++++++++++++++++ 770px */ {
+  header {
+    justify-content: flex-end;
+    gap: 20%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.mobile {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: calc(100% - 65px);
+    z-index: -1;
+  }
+
+  nav.mobile ul {
+    flex-direction: column;
+    align-items: center;
+    background-color: #b48a21bb;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: 0.4s ease-in-out;
+    transform: translateX(-100%);
+    padding: 10px 0;
+    gap: 20px;
+  }
+
+  nav.mobile.open ul {
+    transform: translateX(0);
+  }
+
+  .header-buttons {
+    gap: 12px;
+    margin-right: 8px;
+  }
+
+  /* HERO */
+  #hero h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  /* CONTENT */
+  #content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-left {
+    text-align: center;
+  }
+
+  .content-left h2 {
+    text-align: center;
+    margin: 0 auto 20px auto;
+  }
+
+  .content-left p {
+    width: 100%;
+  }
+
+  .content-right-box {
+    margin: 0;
+  }
+
+  .content-right-box img {
+    width: 75%;
+  }
+
+  /* FOOTER */
+  .social-media {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 525px) /* ++++++++++++++++++++++++++++++++++ 525px */ {
+  header {
+    gap: 10%;
+  }
+
+  .mobile .hamburger-menu {
+    margin-left: 8px;
+  }
+
+  #logo {
+    gap: 4px;
+  }
+
+  #logo img {
+    width: 40px;
+  }
+  #logo h4 {
+    font-size: 24px;
+  }
+
+  /* CONTENT */
+  #content.padding-large {
+    padding: 40px 20px;
+  }
+
+  /* FOOTER */
+  footer {
+    height: 200px;
+  }
+
+  .footer-wrapper {
+    flex-direction: column;
+    height: 80%;
+  }
+}
+
+@media (max-width: 375px) /* ++++++++++++++++++++++++++++++++++ 375px */ {
+  header {
+    gap: 5%;
+  }
+  header button {
+    width: 50px;
+  }
+
+  /* CONTENT */
+  #content h2 {
+    font-size: 20px;
+  }
+}
+
+/* KEEP PLACING MEDIAS */
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.hamburger-menu {
+  width: 35px;
+  height: 30px;
+  margin: 18px 15px 12px 20px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  animation: glowing-button85 4s infinite;
+  z-index: 1;
+}
+
+.hamburger-menu :before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff000040,
+    #ff730040,
+    #fffb0040,
+    #48ff0040,
+    #00ffd540,
+    #002bff40,
+    #7a00ff40,
+    #ff00c840,
+    #ff000040
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.hamburger-menu span {
+  background-color: white;
+  position: absolute;
+  border-radius: 2px;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+.hamburger-menu span:nth-child(1) {
+  width: 100%;
+  height: 4px;
+  display: block;
+  top: 0px;
+  left: 0px;
+}
+.hamburger-menu span:nth-child(2) {
+  width: 100%;
+  height: 4px;
+  display: block;
+  top: 13px;
+  left: 0px;
+}
+.hamburger-menu span:nth-child(3) {
+  width: 100%;
+  height: 4px;
+  display: block;
+  bottom: 0px;
+  left: 0px;
+}
+.hamburger-menu:not(.open):hover span:nth-child(1) {
+  width: 100%;
+  height: 4px;
+  display: block;
+  top: -2px;
+  left: 0px;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+.hamburger-menu:not(.open):hover span:nth-child(2) {
+  width: 100%;
+  height: 4px;
+  display: block;
+  top: 13px;
+  left: 0px;
+  transition: 0.4s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+.hamburger-menu:not(.open):hover span:nth-child(3) {
+  width: 100%;
+  height: 4px;
+  display: block;
+  bottom: -2px;
+  left: 0px;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+.hamburger-menu.open {
+  transform: rotate(90deg);
+}
+.hamburger-menu.open span:nth-child(1) {
+  left: 3px;
+  top: 12px;
+  width: 30px;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  transform: rotate(90deg);
+  transition-delay: 150ms;
+}
+.hamburger-menu.open span:nth-child(2) {
+  left: 2px;
+  top: 20px;
+  width: 20px;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  transform: rotate(45deg);
+  transition-delay: 50ms;
+}
+.hamburger-menu.open span:nth-child(3) {
+  left: 14px;
+  top: 20px;
+  width: 20px;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  transform: rotate(-45deg);
+  transition-delay: 100ms;
 }
