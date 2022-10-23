@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="title" content="Document">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="David">
+  <meta name="language" content="english">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Parallax Effect</title>
+</head>
+
+<body>
+  <header>
+    <nav class="mobile">
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Order</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Connect</a></li>
+      </ul>
+    </nav>
+    <div id="logo">
+      <img src="/images/logo.png" alt="">
+      <h4>Bluehouse</h4>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Order</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Connect</a></li>
+      </ul>
+    </nav>
+    <div class="header-buttons">
+      <button>Login</button>
+      <img src="/images/darkmode.png" width="25px" height="25px">
+    </div>
+  </header>
+
+  <main>
+    <div class="wrapper">
+
+      <section id="hero">
+        <img src="/images/hero.jpg" class="background">
+        <img src="/images/decoration.png" class="foreground">
+        <h2>The future is now</h2>
+        <button class="button-85">Explore</button>
+      </section>
+
+      <section id="content" class="padding-large">
+        <div class="content-left">
+          <div class="content-left-box">
+            <h2 class="one from-left">Bleeding-edge technology</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis doloribus quidem eligendi est, repellendus rerum quaerat explicabo
+              quisquam ratione ipsa omnis optio odio. Reprehenderit hic, mollitia ipsa odit delectus tempora porro cupiditate autem corrupti
+              provident
+              unde rem, quod excepturi amet nihil eius quibusdam deleniti! Omnis officia veritatis voluptates suscipit illo.</p>
+          </div>
+          <div class="content-left-box">
+            <h2 class="two from-left">Innovation is the new standard</h2>
+            <p>This is a dummy text. Facilis doloribus quidem eligendi est, repellendus rerum quaerat explicabo
+              quisquam ratione ipsa omnis optio odio. Reprehenderit hic, mollitia ipsa odit delectus. Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Facilis, perspiciatis corporis error corrupti officiis iure tempora illo delectus dicta itaque? Eum assumenda minus
+              molestias dolorum?</p>
+          </div>
+        </div>
+        <div class="content-right">
+          <div class="content-right-box">
+            <h2 class="puff-in">Picture Title</h2>
+            <img src="/images/left-one.jpg" class="tilt-in">
+            <h5>One of the best picture descriptions :)</h5>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrapper-two">
+        <section id="mission">
+          <img src="/images/ring-s.png" class="foreground">
+          <img src="/images/mission1.jpg" class="background">
+          <div class="space-left"></div>
+          <div class="mission-container">
+            <h2 class="puff-in" title="mission">Our Mission</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, accusamus odio error odit optio iusto labore unde quod recusandae non
+              praesentium.</p>
+            <p> Molestias vero consectetur nobis soluta perferendis quidem nulla tenetur ut at facere neque aliquam iure aut
+              repellat
+              quisquam
+              itaque, blanditiis dolore tempora excepturi consequuntur assumenda culpa similique maxime porro!</p>
+            <p><strong> Maxime
+                itaque provident necessitatibus ad consequatur harum dolores aspernatur quam!</strong></p>
+            <h2 title="connect" class="puff-in">Get in touch:</h2>
+            <form action="post" class="padding-small">
+              <h5>Send us a message</h5>
+              <div class="input-box">
+                <input type="text" class="message" placeholder="Enter a message...">
+                <button type="submit" class="btn1">&#x27A4;</button>
+              </div>
+              <h5>Enter your E-address*</h5>
+              <div class="input-box">
+                <input type="email" class="email" placeholder="Enter your e-address...">
+                <button type="submit" class="btn2">&#x27A4;</button>
+              </div>
+              <h6>*we will not send you new offers without your consent</h6>
+            </form>
+          </div>
+          <div class="space-right"></div>
+        </section>
+        <section id="partners" class="padding-large">
+          <h2>Some of our partners you might heard of:</h2>
+          <div class="partners-box">
+            <img src="/images/partners/nasa.jpg" alt="nasa-logo" class="nasa">
+            <img src="/images/partners/spacex.jpg" alt="spacex-logo" class="spacex">
+            <img src="/images/partners/apple.jpg" alt="apple-logo" class="apple">
+            <img src="/images/partners/google.jpg" alt="google-logo" class="google">
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-wrapper padding-mid hidden">
+      <div id="logo">
+        <img src="/images/logo.png" alt="logo">
+        <h4>Bluehouse</h4>
+      </div>
+      <div class="social-media">
+        <img src="/images/facebook.svg" onclick=`window.location='https://facebook.com' `>
+        <img src="/images/instagram.svg" onclick=`window.location='https://instagram.com'>
+        <img src="/images/whatsapp.svg" onclick=`window.location='https://whatsapp.com'>
+        <img src="/images/telegram.svg" onclick=`window.location='https://telegram.com'>
+      </div>
+    </div>
+    <div id="subfooter">
+      <h6>Bluehouse Llc <span>&reg;</span> All Rights Reserved.</h6>
+    </div>
+  </footer>
+
+</body>
+
+</html>
